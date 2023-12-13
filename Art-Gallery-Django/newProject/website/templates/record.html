@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card col-md-6">
+  <div class="card-header">
+    <h3>{{ record.art_name }}</h3>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text"><strong>Artist Name: </strong>{{ record.artist_name }}</p>
+    <p class="card-text"><strong>Artist Country: </strong>{{ record.artist_country }}</p>
+    <p class="card-text"><strong>Year Created: </strong>{{ record.year_created }}</p>
+    <p class="card-text"><strong>Museum: </strong>{{ record.museum }}</p>
+    <p class="card-text"><strong>Museum City: </strong>{{ record.museum_city }}</p>
+    <p class="card-text"><strong>Created At: </strong>{{ record.created_at }}</p>
+    <p class="card-text"><strong>Link: </strong><a href="{{record.art_url }}">{{ record.art_url }}</a></p>
+  </div>
+</div>
+<br/>
+<div>
+  <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+  <a href="{% url 'delete' record.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'update' record.id %}" class="btn btn-primary">Update</a>
+</div>
+
+
+<br/>
+
+{% endblock %}
